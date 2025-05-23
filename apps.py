@@ -1,13 +1,9 @@
-# app.py
 import streamlit as st
+from wish import wish_internship
 
-st.title("Simple Streamlit App")
+st.title("Internship Wish Generator")
 
-name = st.text_input("Enter your name:")
-
-if name:
-    st.write(f"Hello, {name}! 👋")
-else:
-    st.write("Please enter your name above ☝️")
-st.write("This is a simple Streamlit app that greets the user by name.")
-st.write("You can run this app using the command: `streamlit run app.py`")
+user_name = st.text_input("Enter your name:")
+if user_name:
+    wish = wish_internship(user_name)
+    st.write(wish)
